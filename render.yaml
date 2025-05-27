@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: kemet-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    repo: https://github.com/AhmedmMhmoud2001/kemet-backend
+    branch: main
+    rootDir: .
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        value: mongodb+srv://ahmedmahmoud2152001:3vUqBT3IstEYPTPk@cluster0.7rsfqbg.mongodb.net/kemetdb
+      - key: JWT_SECRET
+        value: Kemet@2024!S3rv!c3#Auth$Key^98XZrP
