@@ -16,11 +16,11 @@ router.post('/', auth, async (req, res) => {
   res.status(201).json(service);
 });
 
-// Update service
-router.put('/:id', auth, async (req, res) => {
-  const service = await Service.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(service);
-});
+// // Update service
+// router.put('/:id', auth, async (req, res) => {
+//   const service = await Service.findByIdAndUpdate(req.params.id, req.body, { new: true });
+//   res.json(service);
+// });
 
 // Delete service
 router.delete('/:id', auth, async (req, res) => {

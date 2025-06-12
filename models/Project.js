@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
-const ProjectSchema = new mongoose.Schema({
-  title: { type: String, required: true },
+
+const projectSchema = new mongoose.Schema({
+  title: String,
   description: String,
+  service: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Service'
+  },
   imageUrl: String,
-  service: { type: mongoose.Schema.Types.ObjectId, ref: 'Service' },
-  createdAt: { type: Date, default: Date.now }
-});
-module.exports = mongoose.model('Project', ProjectSchema);
+  imagePublicId: String // 👈 ضروري لحذف الصورة من Cloudinary
+}, { timestamps: true });
+
+module.exports = mongoose.model('Project', projectSchema);
